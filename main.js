@@ -13,7 +13,7 @@ async function apiRequest(){
         document.querySelector('#directions').innerText = 'Directions'
         document.querySelector('#directions').href = data.address
         document.querySelector('#parkImage').innerHTML = `<img src="${data.image}" alt="Picture from ${data['park-name']}">`
-        document.querySelector('#features-list').innerHTML = (data) => {
+        function featuresList(data) {
             let htmlTags = ''
             if (data['bike-path'] === true){
                 htmlTags+='<li>Bike Path Access</li>'
@@ -29,6 +29,7 @@ async function apiRequest(){
             }
             return htmlTags.length > 1 ? `<h3>Features:</h3> ${htmlTags}` : ''
         }
+        document.querySelector('#features-list').innerHTML = featuresList(data)
     }
     catch(error){
         console.log(error)
