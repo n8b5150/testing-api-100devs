@@ -12,6 +12,7 @@ async function apiRequest(){
         document.querySelector('#website').href = data.website
         document.querySelector('#directions').innerText = 'Directions'
         document.querySelector('#directions').href = data.address
+        document.querySelector('#parkImage').innerHTML = `<img src="${data.image}" alt="Picture from ${data['park-name']}">`
     }
     catch(error){
         console.log(error)
