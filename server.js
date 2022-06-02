@@ -86,7 +86,7 @@ const parks = {
         'campground' : false,
         'kayak' : true,
     },
-    'fallen timbers' : {
+    'fallentimbers' : {
         'park-name': 'Fallen Timbers Battlefield Metropark',
         'image' : 'img/fallentimbers.jpg',
         'website' : 'https://metroparkstoledo.com/explore-your-parks/fallen-timbers-battlefield-fort-miamis-metropark/',
