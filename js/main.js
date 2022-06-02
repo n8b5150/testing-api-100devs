@@ -1,4 +1,4 @@
-document.querySelector('h1').addEventListener('click', apiRequest)
+document.querySelector('span').addEventListener('click', apiRequest)
 
 async function apiRequest(){
     const parkName = document.querySelector('input').value
@@ -8,6 +8,7 @@ async function apiRequest(){
         const data = await response.json()
         console.log(data)
         document.querySelector('a').href = data
+        document.querySelector('#selectedPark').innerText = parkName
     }
     catch(error){
         console.log(error)
