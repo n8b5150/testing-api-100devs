@@ -13,6 +13,22 @@ async function apiRequest(){
         document.querySelector('#directions').innerText = 'Directions'
         document.querySelector('#directions').href = data.address
         document.querySelector('#parkImage').innerHTML = `<img src="${data.image}" alt="Picture from ${data['park-name']}">`
+        document.querySelector('#features-list').innerHTML = (data) => {
+            let htmlTags = ''
+            if (data['bike-path'] === true){
+                htmlTags+='<li>Bike Path Access</li>'
+            }
+            if (data.campground === true){
+                htmlTags+='<li>Campground</li>'
+            }
+            if (data.kayak === true){
+                htmlTags+='<li>Kayak Launch</li>'
+            }
+            if (data.playground === true){
+                htmlTags+='<li>Playground</li>'
+            }
+            return htmlTags.length > 1 ? `<h3>Features:</h3> ${htmlTags}` : ''
+        }
     }
     catch(error){
         console.log(error)
