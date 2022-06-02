@@ -1,14 +1,17 @@
-document.querySelector('span').addEventListener('click', apiRequest)
+document.querySelector('#getPark').addEventListener('click', apiRequest)
 
 async function apiRequest(){
-    const parkName = document.querySelector('input').value
+    const parkName = document.querySelector('select').value
     console.log(parkName)
     try{
         const response = await fetch(`https://testing-api-100devs.herokuapp.com/api/${parkName}`)
         const data = await response.json()
         console.log(data)
-        document.querySelector('a').href = data
-        document.querySelector('#selectedPark').innerText = parkName
+        document.querySelector('#selectedPark').innerText = park-name
+        document.querySelector('#website').innerText = data.website
+        document.querySelector('#website').href = data.website
+        document.querySelector('#directions').innerText = Directions
+        document.querySelector('#directions').href = data.address
     }
     catch(error){
         console.log(error)
