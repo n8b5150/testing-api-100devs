@@ -1,6 +1,9 @@
 heroku login -i
 heroku create simple-rap-api
 echo "web: node server.js" > Procfile
+git init
+git branch -m master main
+heroku git:remote -a repository_name
 git add . 
 git commit -m "changes"
 git push heroku main
