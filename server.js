@@ -3,11 +3,11 @@ const app = express()
 const MongoClient = require('mongodb').MongoClient
 //const ejs = require('ejs')
 //const { response } = require('express')
-//const cors = require('cors')
+const cors = require('cors')
 const PORT = 2121 //8000
 require('dotenv').config()
 
-//app.use(cors())
+app.use(cors())
 
 
 let db,
